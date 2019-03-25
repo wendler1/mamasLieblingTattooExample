@@ -1,0 +1,21 @@
+*,* ::after,* ::before{
+    box-sizing:border-box;
+    
+}
+
+/* Schriften formatieren*/
+
+html,body{
+    width: 90;
+    margin: auto;
+}
+
+ul{
+    /*background-color: red;*/
+    /*background-color: #f00;*/
+    /*background: rgb(255,00,00);*/
+    /*background: rgba(255,0,0,.5);*/
+    /*background: hsl(0,100%,50%);*/
+    /*background: hsla(0,100%,50%,1);*/
+    
+}

@@ -1,0 +1,407 @@
+
+/*
+
+    Die Seite ist responsive im Desktop First Verfahren entwickelt, da unsere ursprüngliche Design Idee für Desktop Größe ausgelegt war.
+    Deswegen haben wir dann unser Desktop Design mit Media Queries für kleinere Geräte angepasst, in dem sich das Layout der Artikel anpasst
+    und die Navigation auch angepasst wird.
+
+    Wir haben uns für die Verwendung einer normalize.css entschieden, da wir es für sinnvoll halten, diese als Grundlage zu verwenden. Dadurch ist ein in verschiedenen Browsern
+    identisches, grundlegendes Styling vorhanden, welches man dann mit seinem eigenem, spezifischen Styling, wo benötigt, überschreiben kann.
+
+*/
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    padding-top: 100px;
+    background: #F7F7F7;
+}
+
+p {
+    line-height: 1.3rem
+}
+
+header {
+    /*Fallback für den gradient*/
+    background: #14A859;
+
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+header img {
+    position: absolute;
+    top: 16px;
+    z-index: 2;
+    left: 20px;
+}
+
+nav {
+    position: absolute;
+    top: 40px;
+    right: 5%;
+    width: 200px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-top: 2%;
+    padding-bottom: 1%;
+}
+
+nav li:first-child {
+    border-right: 2px solid rgba(255,255,255,0.8);
+    /* wir ziehen die 2px border vom padding ab */
+    padding-right: calc(7% - 2px);
+}
+
+nav a {
+    color: #E7E7E7;
+    font-size: 1.1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s ease-out;
+}
+
+.active {
+    color: white;
+}
+
+nav a:hover {
+    color: white;
+}
+
+h1 {
+    position: absolute;
+    color: white;
+    font-family: "Verdana";
+    margin: 0;
+    top: 30px;
+    left: 110px;
+    font-weight: 600;
+}
+
+h2 {
+    text-align: center;
+    font-family: "Verdana";
+    font-size: 1.6rem;
+    margin-top: 3%;
+    margin-bottom: 4%;
+}
+
+h3 {
+    text-align: left;
+    font-family: "Verdana";
+    opacity: 0.9;
+}
+
+p {
+    font-family: "Verdana";
+
+}
+
+time {
+    font-family: "Verdana";
+    opacity: 0.7;
+    margin-bottom: 4%;
+    display: block;
+}
+
+.article-time {
+    text-align: center;
+}
+
+.about-time {
+    opacity: 1;
+    margin-bottom: 0;
+    display: inline;
+}
+
+section div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+article {
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 0.5%;
+    padding-bottom: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 38%;
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+    margin-bottom: 1%;
+    background: white;
+    border-radius: 2px;
+}
+
+article img {
+    width: 100%;
+}
+
+article a {
+    cursor: pointer;
+    display: inline-block;
+    background: #2CC272;
+    padding: 4%;
+    color: white;
+    font-family: "Verdana";
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s ease-out;
+}
+
+article a:hover {
+    background: #14A859;
+
+}
+
+.article-container {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    padding: 4%;
+    padding-top: 2%;
+}
+
+form {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    padding: 3%;
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+    margin-bottom: 5%;
+}
+
+fieldset {
+    margin-bottom: 5%;
+    padding: 2%;
+}
+
+.form-btn {
+    background: #2CC272;
+    padding: 2%;
+    color: white;
+    font-family: "Verdana";
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s ease-out;
+    border: none;
+
+}
+
+.form-btn:hover {
+    background: #14A859;
+}
+
+input {
+    margin-right: 2%
+}
+
+#email-container {
+    margin-top: 2%;
+}
+
+#form-heading {
+    text-align: center;
+}
+
+h4 {
+    font-family: "Verdana"
+
+}
+
+li {
+
+    font-family: "Verdana"
+
+}
+
+.memory-container {
+    display: block;
+    padding-top: 0;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.memory-container div {
+
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    position: relative;
+    perspective: 800px;
+    transition: all 0.3s ease-out
+
+}
+
+.memory-container div:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 2px 14px 2px rgba(0,0,0,0.2)
+}
+
+.memory-container img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.invisible:before {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #14A859 url("../imgs/logo.png") no-repeat center;
+    z-index: 12121;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 1s ease-out;
+    opacity: 1;
+    backface-visibility: hidden;
+
+}
+
+.invisible img {
+    transition: all 1s ease-out;
+    opacity: 0;
+    backface-visibility: hidden;
+    transform: rotateY( 180deg );
+}
+
+.visible:before {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+    z-index: 12121;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 1s ease-out;
+    transform: rotateY( -180deg );
+}
+
+.visible {
+    transform: scale(1)!important;
+    box-shadow: none!important;
+
+}
+
+.visible img {
+    opacity: 1;
+    transform: rotateY( 0deg );
+
+}
+
+.falseInput {
+    background: red
+}
+
+@media screen and (max-width: 1100px) {
+
+    .article-container {
+        width: 95%;
+    }
+    form {
+        width: 95%;
+    }
+    article {
+        width: 43%;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+}
+
+
+
+@media screen and (max-width: 850px) {
+
+    /* Nav nach unten verschieben */
+    nav {
+        position: fixed;
+        background: #14A859;
+        top: 100px;
+        left: 0;
+        height: 40px;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav ul {
+        width: 200px
+    }
+
+    body {
+        padding-top: 140px;
+    }
+
+    section div {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    article {
+
+        padding-left: 4%;
+        padding-right: 4%;
+        padding-top: 2%;
+        padding-bottom: 4%;
+        width: 95%;
+        margin: 0;
+        margin-bottom: 4%;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    h1 {
+        font-size: 1.4rem;
+        top: 35px;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+
+
+    h1 {
+        font-size: 1rem;
+        top: 40px;
+    }
+
+
+}

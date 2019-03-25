@@ -1,0 +1,94 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+html{
+    font-size: 18px;
+}
+h1{
+   /* visibility: hidden;
+    display: none;*/
+    text-align: center;
+    color: crimson;
+    background-color: aqua;
+    font-family: fantasy;
+    font-size: 3.3em;
+    padding-top: 2% /*10px*/;
+}
+ul li{
+    display: inline-block;
+    width:24%;
+    text-align: center;
+    font-size: 1.5em;
+    background-color: burlywood;
+    
+}
+ul{
+    width: 100%;
+}
+
+section.float article{
+    float:left;
+    margin: 5px;
+    border-right: 5px solid black;
+}
+
+
+section.flexbox{
+    clear: both;
+    display: flex;
+    flex-direction:row;
+    justify-content:center;
+    border: 5px solid black;
+}
+section.flexbox article{
+    width: 40%;
+    display: inline;
+}
+
+
+
+section.relative article{
+    clear: both; /* wird benoetigt das die Elemente nicht hoch rutschen*/
+    /*position: static; always static by default*/
+    position:relative; /*Positionsart*/
+    width:80%;
+    top:50px; /*bottom*/ /*Verschiebung*/
+    left:20%; /*right*/ /*Verschiebung*/
+    border-right: 5px solid black;
+    border-top: 5px solid black;
+    
+}
+section.absolute{ /*we did that so that the article has the section.absolute as                     Bezugspunkt*/
+    position: relative;
+}
+section.absolute article{
+    position: absolute;
+    margin-top: 40px;
+    top:10px;
+    right:50%;
+    border-right: 5px solid black;
+    border-top: 5px solid black;
+}
+
+section.fixed{
+    position: fixed;
+    width: 10%;
+    bottom: 0;
+    right: 0;
+    border: 5px solid black;
+}
+
+footer{
+    margin-top: 30%;
+}
+
+/* max-device-with means, if the screen is less than 500px the media query is gonna be applied*/
+
+@media only screen and (max-device-width: 500px){}
+    
+
+
+
+
+
+
